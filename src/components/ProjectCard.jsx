@@ -10,7 +10,6 @@ export default function ProjectCard({ icon, title, description, link }) {
         </h3>
         <p className="text-gray-300 text-sm mb-4">{description}</p>
       </div>
-
       <a
         href={link}
         target="_blank"
