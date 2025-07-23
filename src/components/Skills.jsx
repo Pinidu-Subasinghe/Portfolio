@@ -8,7 +8,7 @@ const Skills = () => {
     { name: 'JavaScript (ES6+)', percentage: 75 },
     { name: 'React.js', percentage: 70 },
     { name: 'Node.js', percentage: 65 },
-    { name: 'Git', percentage: 60 },
+    { name: 'Java', percentage: 60 },
     { name: 'MongoDB', percentage: 55 },
     { name: 'Risk Management', percentage: 70 },
     { name: 'Decision Making', percentage: 80 },

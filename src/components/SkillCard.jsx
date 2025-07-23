@@ -29,8 +29,8 @@ const SkillCard = ({ name, percentage }) => {
         return "bg-gradient-to-r from-cyan-400 to-blue-600";
       case "Node.js":
         return "bg-gradient-to-r from-green-500 to-emerald-600";
-      case "Git":
-        return "bg-gradient-to-r from-[#333333] to-[#6e7681]";
+      case "Java":
+        return "bg-gradient-to-r from-[#1c1c1c] to-[#e76f00]";
       case "MongoDB":
         return "bg-gradient-to-r from-green-700 to-teal-600";
       case "Risk Management":
@@ -53,7 +53,7 @@ const SkillCard = ({ name, percentage }) => {
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       "Node.js":
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-      Git: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+      Java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
       MongoDB:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
       "Risk Management": "https://cdn-icons-png.flaticon.com/512/595/595067.png",

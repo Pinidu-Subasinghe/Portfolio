@@ -1,5 +1,5 @@
 import ProjectCard from './ProjectCard';
-import { Monitor, Camera } from 'lucide-react';
+import { Monitor, Camera, User } from 'lucide-react';
 
 const projects = [
   {
@@ -15,10 +15,10 @@ const projects = [
     link: "https://github.com/pinidu2002/Clothing_Store"
   },
   {
-    title: "TaskMaster",
-    icon: <Monitor />,
-    description: "A task management app with real-time collaboration. Built with Next.js and Firebase for seamless productivity.",
-    link: "https://github.com/pinidu2002/TaskMaster"
+    title: "Portfolio",
+    icon: <User />,
+    description: "My personal portfolio showcasing my skills and projects. Built with React, Tailwind CSS, featuring a modern design and smooth animations.",
+    link: "https://github.com/pinidu2002/Portfolio"
   }
 ];
 
