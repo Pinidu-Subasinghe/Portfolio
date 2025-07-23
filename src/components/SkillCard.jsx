@@ -1,21 +1,47 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const SkillCard = ({ name, percentage }) => {
   const progressRef = useRef(null);
+  const cardRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const progress = progressRef.current;
-    progress.style.width = "0%";
-    const animation = progress.animate(
-      [{ width: "0%" }, { width: `${percentage}%` }],
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target); // Animate only once
+        }
+      },
       {
-        duration: 1500,
-        easing: "ease-in-out",
-        fill: "forwards",
+        threshold: 0.3, // Trigger when 30% of the card is visible
       }
     );
-    return () => animation.cancel();
-  }, [percentage]);
+
+    if (cardRef.current) {
+      observer.observe(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current) observer.unobserve(cardRef.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (isVisible && progressRef.current) {
+      const progress = progressRef.current;
+      progress.style.width = "0%";
+      const animation = progress.animate(
+        [{ width: "0%" }, { width: `${percentage}%` }],
+        {
+          duration: 1500,
+          easing: "ease-in-out",
+          fill: "forwards",
+        }
+      );
+      return () => animation.cancel();
+    }
+  }, [isVisible, percentage]);
 
   const getGradientStyle = (name) => {
     switch (name) {
@@ -44,18 +70,13 @@ const SkillCard = ({ name, percentage }) => {
 
   const getLogo = (name) => {
     const logos = {
-      HTML5:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      HTML5: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
       CSS3: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-      "JavaScript (ES6+)":
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      "React.js":
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      "Node.js":
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      "JavaScript (ES6+)": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      "React.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "Node.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
       Java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-      MongoDB:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      MongoDB: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
       "Risk Management": "https://cdn-icons-png.flaticon.com/512/595/595067.png",
       "Decision Making": "https://img.icons8.com/color/48/decision.png",
     };
@@ -73,12 +94,15 @@ const SkillCard = ({ name, percentage }) => {
   };
 
   return (
-    <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-700">
+    <div
+      ref={cardRef}
+      className="bg-white/5 backdrop-blur-md p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-white/10"
+    >
       <div className="flex items-center mb-4">
         {getLogo(name)}
         <h3 className="text-xl font-bold ml-2 text-white">{name}</h3>
       </div>
-      <div className="w-full bg-gray-700 rounded-full h-4 overflow-hidden">
+      <div className="w-full bg-white/10 rounded-full h-4 overflow-hidden">
         <div
           ref={progressRef}
           className={`h-4 rounded-full ${getGradientStyle(name)}`}

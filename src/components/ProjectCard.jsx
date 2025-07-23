@@ -1,6 +1,6 @@
 export default function ProjectCard({ icon, title, description, link }) {
   return (
-    <div className="bg-[#111827] p-6 rounded-xl shadow-md border border-[#1f2937] hover:shadow-neon transition-all duration-300 transform hover:scale-105 text-center h-full flex flex-col justify-between">
+    <div className="bg-white/5 backdrop-blur-md p-6 rounded-xl shadow-md border border-white/10 hover:shadow-neon transition-all duration-300 transform hover:scale-105 text-center h-full flex flex-col justify-between">
       <div>
         <div className="text-[#0ff] mb-4 text-4xl flex justify-center drop-shadow-neon">
           {icon}

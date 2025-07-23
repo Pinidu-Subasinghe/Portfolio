@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin } from "lucide-react";
+import { Mail, Github, Linkedin, Facebook, Instagram } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -37,6 +37,25 @@ export default function Contact() {
             aria-label="LinkedIn"
           >
             <Linkedin size={32} className="drop-shadow-neon" />
+          </a>
+          <a
+            href="https://www.facebook.com/share/1aBQeLtzAh/?mibextid=wwXIfr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#0ff] hover:text-[#38bdf8] transition-colors"
+            aria-label="Facebook"
+          >
+            <Facebook size={32} className="drop-shadow-neon" />
+          </a>
+
+          <a
+            href="https://www.instagram.com/pinidu_pramudith/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#0ff] hover:text-[#38bdf8] transition-colors"
+            aria-label="Instagram"
+          >
+            <Instagram size={32} className="drop-shadow-neon" />
           </a>
         </div>
         <a

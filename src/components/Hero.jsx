@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { Download } from "lucide-react";
 import Typed from "typed.js";
 import Me from "../assets/IMG_2184.jpg";
+import SLIITLogo from "../assets/sliit.png";
+import CustomsLogo from "../assets/slc.png";
 
 export default function Hero() {
   useEffect(() => {
@@ -16,6 +18,7 @@ export default function Hero() {
       backSpeed: 30,
       backDelay: 2000,
       loop: true,
+      showCursor: false, // Disable blinking cursor
     };
     const typed = new Typed("#typed-text", options);
     return () => typed.destroy();
@@ -31,20 +34,44 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="pt-24 scroll-mt-24 min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0b0f1a] to-[#1e293b]"
+      className="pt-24 pb-12 scroll-mt-24 min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0b0f1a] to-[#1e293b] px-4 sm:px-6 lg:px-12"
     >
       <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-12">
         {/* Left side - text */}
-        <div className="w-full lg:w-1/2 space-y-6 lg:pl-12">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#0ff] drop-shadow-neon">
-            <span id="typed-text"></span>
-          </h2>
-          <p className="text-gray-300 max-w-md text-lg md:text-xl leading-relaxed">
-            Passionate about crafting innovative, user-centric web applications
-            with cutting-edge technologies like React, Node.js, and Tailwind
-            CSS.
+        <div className="w-full lg:w-1/2 space-y-6 lg:pl-12 text-center lg:text-left order-1 lg:order-1">
+          <div className="relative h-36 mb-2 sm:mb-4">
+            {/* Fixed height container */}
+            <h2
+              className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#0ff] drop-shadow-neon leading-tight absolute inset-0 flex items-center justify-center lg:justify-start"
+              style={{ minHeight: "4.5rem" }} // or set exact height you want
+            >
+              <span id="typed-text" className="inline-block"></span>
+            </h2>
+          </div>
+          <p className="text-gray-300 max-w-md text-lg md:text-xl leading-relaxed -mt-4 sm:mt-0">
+            I am an Information Technology undergraduate at{" "}
+            <strong>SLIIT</strong> and work full-time as a Customs Inspector at{" "}
+            <strong>Sri Lanka Customs</strong>. I love technology, web
+            development, and building innovative digital experiences.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+
+          {/* Logos */}
+          <div className="flex flex-wrap justify-center lg:justify-start gap-6 mt-4 max-w-md sm:max-w-full mx-auto lg:mx-0">
+            <img
+              src={SLIITLogo}
+              alt="SLIIT Logo"
+              className="h-10 sm:h-12 object-contain filter invert brightness-0"
+              loading="lazy"
+            />
+            <img
+              src={CustomsLogo}
+              alt="Sri Lanka Customs Logo"
+              className="h-10 sm:h-12 object-contain filter invert brightness-0"
+              loading="lazy"
+            />
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center lg:justify-start">
             <a
               href="#projects"
               onClick={(e) => {
@@ -67,7 +94,7 @@ export default function Hero() {
         </div>
 
         {/* Right side - image */}
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end pr-0 lg:pr-12 relative">
+        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end pr-0 lg:pr-12 relative order-2 lg:order-2">
           {/* Glow effect */}
           <div className="absolute inset-0 bg-[#0ff] opacity-10 blur-3xl rounded-xl pointer-events-none"></div>
 
@@ -75,6 +102,7 @@ export default function Hero() {
             src={Me}
             alt="Developer working"
             className="relative rounded-xl shadow-neon border border-[#1f2937] w-[10rem] md:w-[20rem] lg:w-[30rem] max-w-full h-auto transform hover:scale-105 transition-transform duration-300"
+            style={{ maxHeight: "70vh", objectFit: "contain" }}
           />
         </div>
       </div>
