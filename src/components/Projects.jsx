@@ -19,8 +19,8 @@ const projects = [
 export default function Projects() {
   return (
     <section id="projects" className="mt-12">
-      <h2 className="text-2xl font-bold mb-6 text-[#38bdf8] drop-shadow-neon">My Projects</h2>
-      <div className="grid md:grid-cols-2 gap-10">
+      <h2 className="text-3xl font-bold mb-8 text-[#38bdf8] drop-shadow-neon text-center">My Projects</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {projects.map((project, i) => (
           <ProjectCard key={i} {...project} />
         ))}
