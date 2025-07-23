@@ -1,0 +1,95 @@
+import React, { useEffect, useRef } from "react";
+
+const SkillCard = ({ name, percentage }) => {
+  const progressRef = useRef(null);
+
+  useEffect(() => {
+    const progress = progressRef.current;
+    progress.style.width = "0%";
+    const animation = progress.animate(
+      [{ width: "0%" }, { width: `${percentage}%` }],
+      {
+        duration: 1500,
+        easing: "ease-in-out",
+        fill: "forwards",
+      }
+    );
+    return () => animation.cancel();
+  }, [percentage]);
+
+  const getGradientStyle = (name) => {
+    switch (name) {
+      case "HTML5":
+        return "bg-gradient-to-r from-orange-500 to-red-600";
+      case "CSS3":
+        return "bg-gradient-to-r from-blue-500 to-indigo-600";
+      case "JavaScript (ES6+)":
+        return "bg-gradient-to-r from-yellow-400 to-yellow-600";
+      case "React.js":
+        return "bg-gradient-to-r from-cyan-400 to-blue-600";
+      case "Node.js":
+        return "bg-gradient-to-r from-green-500 to-emerald-600";
+      case "Git":
+        return "bg-gradient-to-r from-[#333333] to-[#6e7681]";
+      case "MongoDB":
+        return "bg-gradient-to-r from-green-700 to-teal-600";
+      case "Risk Management":
+        return "bg-gradient-to-r from-purple-500 to-pink-600";
+      case "Decision Making":
+        return "bg-gradient-to-r from-indigo-500 to-blue-700";
+      default:
+        return "bg-gradient-to-r from-gray-500 to-gray-700";
+    }
+  };
+
+  const getLogo = (name) => {
+    const logos = {
+      HTML5:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      CSS3: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      "JavaScript (ES6+)":
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      "React.js":
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "Node.js":
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      Git: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+      MongoDB:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      "Risk Management": "https://cdn-icons-png.flaticon.com/512/595/595067.png",
+      "Decision Making": "https://img.icons8.com/color/48/decision.png",
+    };
+
+    return (
+      <img
+        src={
+          logos[name] ||
+          "https://img.icons8.com/ios-filled/50/ffffff/question-mark.png"
+        }
+        alt={name}
+        className="w-6 h-6 mr-2"
+      />
+    );
+  };
+
+  return (
+    <div className="bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-700">
+      <div className="flex items-center mb-4">
+        {getLogo(name)}
+        <h3 className="text-xl font-bold ml-2 text-white">{name}</h3>
+      </div>
+      <div className="w-full bg-gray-700 rounded-full h-4 overflow-hidden">
+        <div
+          ref={progressRef}
+          className={`h-4 rounded-full ${getGradientStyle(name)}`}
+          style={{ width: "0%" }}
+        ></div>
+      </div>
+      <p className="text-center mt-2 text-sm font-medium text-gray-300">
+        {percentage}%
+      </p>
+    </div>
+  );
+};
+
+export default SkillCard;

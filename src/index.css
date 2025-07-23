@@ -21,3 +21,10 @@ body {
   font-family: 'Poppins', sans-serif;
   @apply bg-[#0b0f1a] text-white;
 }
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.9; }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 2s infinite;
+}

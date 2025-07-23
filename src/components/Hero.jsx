@@ -20,6 +20,13 @@ export default function Hero() {
     return () => typed.destroy();
   }, []);
 
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section
       id="hero"
@@ -36,6 +43,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href="#projects"
+              onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}
               className="inline-flex items-center px-6 py-3 rounded-lg border border-[#0ff] text-[#0ff] hover:bg-[#0ff] hover:text-black transition-all duration-300 neon-glow text-base font-medium"
             >
               Explore My Work

@@ -1,4 +1,4 @@
-import { Mail, Github, Linkedin } from 'lucide-react';
+import { Mail, Github, Linkedin } from "lucide-react";
 
 export default function Contact() {
   return (
@@ -8,11 +8,13 @@ export default function Contact() {
           Get in Touch
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-          I'm always excited to collaborate on new projects or discuss innovative ideas. Reach out to me via email or connect on social platforms!
+          I'm always excited to collaborate on new projects or discuss
+          innovative ideas. Reach out to me via email or connect on social
+          platforms!
         </p>
         <div className="flex justify-center space-x-6 mb-8">
           <a
-            href="mailto:pinidu@example.com"
+            href="mailto:it23181892@my.sliit.lk"
             className="text-[#0ff] hover:text-[#38bdf8] transition-colors"
             aria-label="Email"
           >
@@ -28,7 +30,7 @@ export default function Contact() {
             <Github size={32} className="drop-shadow-neon" />
           </a>
           <a
-            href="https://linkedin.com/in/pinidu"
+            href="https://www.linkedin.com/in/pinidupramudith0618"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#0ff] hover:text-[#38bdf8] transition-colors"
