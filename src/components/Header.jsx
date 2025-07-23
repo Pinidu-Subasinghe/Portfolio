@@ -14,7 +14,14 @@ export default function Header() {
   return (
     <header className="w-full bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] px-8 py-5 border-b border-[#1e293b] flex items-center justify-between fixed top-0 z-10 shadow-neon transition-all duration-300 hover:shadow-lg">
       <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ff] to-[#38bdf8] text-2xl font-extrabold drop-shadow-neon animate-pulse-slow flex items-center">
-        <span className="mr-2">👨‍💻</span>Pinidu Pramudith
+        <span className="flex items-center text-white">
+          <img
+            src="https://avatars.githubusercontent.com/u/9919?v=4"
+            alt="Profile"
+            className="w-6 h-6 rounded-full mr-2"
+          />
+          Pinidu Pramudith
+        </span>
       </h1>
       <div className="md:hidden">
         <button
