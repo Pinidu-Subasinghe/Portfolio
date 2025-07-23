@@ -59,7 +59,7 @@ export default function Contact() {
           </a>
         </div>
         <a
-          href="mailto:pinidu@example.com"
+          href="mailto:it23181892@my.sliit.lk"
           className="inline-block px-6 py-3 rounded border border-[#0ff] text-[#0ff] hover:bg-[#0ff] hover:text-black transition-all duration-300 neon-glow"
         >
           Send a Message

@@ -1,25 +1,74 @@
-import ProjectCard from './ProjectCard';
-import { Monitor, Camera, User } from 'lucide-react';
+import ProjectCard from "./ProjectCard";
+import { Monitor, Camera, User, Bus } from "lucide-react";
+import SLIITLogo from "../assets/sliit.png";
 
 const projects = [
   {
-    title: "SKW Photography",
-    icon: <Camera />,
-    description: "Photography portfolio for SKW Studio. Built with React and Tailwind, featuring a sleek gallery and responsive design.",
-    link: "https://github.com/pinidu2002/SKW_Photograph"
+    title: "Portfolio",
+    icon: <User />,
+    description:
+      "My personal portfolio showcasing my skills and projects. Built with React, Tailwind CSS, featuring a modern design and smooth animations.",
+    link: "https://github.com/pinidu2002/Portfolio",
+    techStack: [
+      "React",
+      "Tailwind CSS",
+      "Lucide",
+      "Motion",
+    ],
   },
   {
     title: "ZapCart",
     icon: <Monitor />,
-    description: "E-commerce platform for modern clothing brands. Includes cart functionality, product filters, and a user-friendly interface.",
-    link: "https://github.com/pinidu2002/Clothing_Store"
+    description:
+      "E-commerce platform for modern clothing brands. Includes cart functionality, product filters, and a user-friendly interface.",
+    techStack: [
+      "React",
+      "Vite",
+      "Bootstrap",
+      "Node.js",
+      "MySQL",
+      "Tailwind CSS",
+      "Express",
+      "Postman",
+    ],
+
+    link: "https://github.com/pinidu2002/Clothing_Store",
   },
   {
-    title: "Portfolio",
+    title: "SKW Photography",
+    icon: <Camera />,
+    description:
+      "A complete IT solution built to streamline and modernize the operations of a photography studio. Developed using the MERN stack.",
+    link: "https://github.com/pinidu2002/SKW_Photograph",
+    techStack: [
+      "MongoDB",
+      "Express",
+      "React",
+      "Node.js",
+      "Tailwind CSS",
+      "JWT",
+      "Cloudinary",
+      "Postman",
+    ],
+
+    image: SLIITLogo,
+  },
+  {
+    title: "Bus Reservation System",
+    icon: <Bus />,
+    image: SLIITLogo,
+    description:
+      "University group project to make bus travel efficient and user-friendly. Features real-time seat availability, secure payments, and fleet management.",
+    techStack: ["HTML", "CSS", "Java", "MySQL"],
+  },
+  {
+    title: "Recruitment Company System",
     icon: <User />,
-    description: "My personal portfolio showcasing my skills and projects. Built with React, Tailwind CSS, featuring a modern design and smooth animations.",
-    link: "https://github.com/pinidu2002/Portfolio"
-  }
+    description:
+      "A web app for a recruitment company to streamline hiring. Job seekers create profiles and apply for jobs; recruiters manage listings and candidates.",
+    techStack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
+    image: SLIITLogo,
+  },
 ];
 
 export default function Projects() {
