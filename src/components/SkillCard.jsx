@@ -59,9 +59,9 @@ const SkillCard = ({ name, percentage }) => {
         return "bg-gradient-to-r from-[#1c1c1c] to-[#e76f00]";
       case "MongoDB":
         return "bg-gradient-to-r from-green-700 to-teal-600";
-      case "Risk Management":
+      case "Kotlin":
         return "bg-gradient-to-r from-purple-500 to-pink-600";
-      case "Decision Making":
+      case "C++":
         return "bg-gradient-to-r from-indigo-500 to-blue-700";
       default:
         return "bg-gradient-to-r from-gray-500 to-gray-700";
@@ -70,15 +70,22 @@ const SkillCard = ({ name, percentage }) => {
 
   const getLogo = (name) => {
     const logos = {
-      HTML5: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+      HTML5:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
       CSS3: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-      "JavaScript (ES6+)": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      "React.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      "Node.js": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      "JavaScript (ES6+)":
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      "React.js":
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      "Node.js":
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
       Java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
-      MongoDB: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-      "Risk Management": "https://cdn-icons-png.flaticon.com/512/595/595067.png",
-      "Decision Making": "https://img.icons8.com/color/48/decision.png",
+      MongoDB:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+      Kotlin:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg",
+      "C++":
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
     };
 
     return (

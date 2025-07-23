@@ -52,7 +52,7 @@ export default function ProjectCard({
   };
 
   return (
-    <div className="bg-[#111827] p-6 rounded-2xl shadow-neon flex flex-col gap-4 text-white relative">
+<div className="bg-[#111827] p-6 rounded-2xl shadow-neon flex flex-col gap-4 text-white relative transition-transform duration-300 hover:scale-105">
       {/* Top Row: Icon + Title on Left, SLIIT Logo on Right */}
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-3 text-cyan-400">
