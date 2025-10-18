@@ -21,7 +21,7 @@ export default function Contact() {
             <Mail size={32} className="drop-shadow-neon" />
           </a>
           <a
-            href="https://github.com/pinidu2002"
+            href="https://github.com/Pinidu-Subasinghe"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#0ff] hover:text-[#38bdf8] transition-colors"
