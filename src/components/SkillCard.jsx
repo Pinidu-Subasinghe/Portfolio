@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-// removed framer-motion; keep native CSS interactions
+// Removed framer-motion; using native CSS interactions
 
 const SkillCard = ({ name, percentage }) => {
   const progressRef = useRef(null);
   const cardRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  // no hover-detection needed; we'll avoid motion hover effects and keep only border color on hover via CSS
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -16,14 +15,11 @@ const SkillCard = ({ name, percentage }) => {
         }
       },
       {
-        threshold: 0.3, // Trigger when 30% of the card is visible
+        threshold: 0.3, // Trigger when 30% visible
       }
     );
 
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
+    if (cardRef.current) observer.observe(cardRef.current);
     return () => {
       if (cardRef.current) observer.unobserve(cardRef.current);
     };
@@ -36,7 +32,7 @@ const SkillCard = ({ name, percentage }) => {
       const animation = progress.animate(
         [{ width: "0%" }, { width: `${percentage}%` }],
         {
-          duration: 2500,
+          duration: 2000,
           easing: "ease-in-out",
           fill: "forwards",
         }
@@ -74,14 +70,16 @@ const SkillCard = ({ name, percentage }) => {
     const logos = {
       HTML5:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-      CSS3: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      CSS3:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
       "JavaScript (ES6+)":
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
       "React.js":
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       "Node.js":
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-      Java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+      Java:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
       MongoDB:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
       Kotlin:
@@ -105,20 +103,23 @@ const SkillCard = ({ name, percentage }) => {
   return (
     <div
       ref={cardRef}
-      className="bg-white/5 backdrop-blur-md p-6 rounded-xl shadow-md transition-colors duration-300 border border-white/10 hover:border-cyan-400"
+      className="bg-white/5 backdrop-blur-md p-6 rounded-xl shadow-md transition-colors duration-300 border border-white/10 hover:border-cyan-400 flex flex-col justify-between min-h-[180px] h-full"
     >
-      <div className="flex items-center mb-4">
-        {getLogo(name)}
-        <h3 className="text-xl font-bold ml-2 text-white">{name}</h3>
+      <div>
+        <div className="flex items-center mb-4">
+          {getLogo(name)}
+          <h3 className="text-xl font-bold ml-2 text-white">{name}</h3>
+        </div>
+        <div className="w-full bg-white/10 rounded-full h-4 overflow-hidden">
+          <div
+            ref={progressRef}
+            className={`h-4 rounded-full ${getGradientStyle(name)}`}
+            style={{ width: "0%" }}
+          ></div>
+        </div>
       </div>
-      <div className="w-full bg-white/10 rounded-full h-4 overflow-hidden">
-        <div
-          ref={progressRef}
-          className={`h-4 rounded-full ${getGradientStyle(name)}`}
-          style={{ width: "0%" }}
-        ></div>
-      </div>
-      <p className="text-center mt-2 text-sm font-medium text-gray-300">
+
+      <p className="text-center mt-4 text-sm font-medium text-gray-300">
         {percentage}%
       </p>
     </div>

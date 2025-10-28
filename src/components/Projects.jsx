@@ -1,3 +1,4 @@
+import React, { useEffect, useRef } from 'react';
 import ProjectCard from "./ProjectCard";
 import { Monitor, Camera, User, Bus, Calculator, Heart, Scissors } from "lucide-react";
 import SLIITLogo from "../assets/sliit.png";
