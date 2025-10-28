@@ -60,30 +60,32 @@ export default function Header() {
           }`}
       >
         <ul className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left md:space-x-10 py-6 md:py-0">
-          {["Home", "Projects", "Skills", "Contact"].map((section, i) => (
-            <li
-              key={section}
-              style={{
-                transitionDelay: `${i * 100}ms`,
-              }}
-              className={`transform transition-all duration-500 ${
-                isOpen
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-[-10px] md:opacity-100 md:translate-y-0"
-              }`}
-            >
-              <a
-                href={`#${section.toLowerCase()}`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(section.toLowerCase());
-                }}
-                className="block text-gray-300 hover:text-[#0ff] text-lg font-medium tracking-wide transition-all duration-300 hover:scale-105 px-6 md:px-0 py-2 md:py-0"
+          {["Home", "Projects", "Skills", "Contact"].map((section, i) => {
+            const targetId =
+              section === "Home" ? "hero" : section.toLowerCase();
+            return (
+              <li
+                key={section}
+                style={{ transitionDelay: `${i * 100}ms` }}
+                className={`transform transition-all duration-500 ${
+                  isOpen
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-[-10px] md:opacity-100 md:translate-y-0"
+                }`}
               >
-                {section}
-              </a>
-            </li>
-          ))}
+                <a
+                  href={`#${targetId}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(targetId);
+                  }}
+                  className="block text-gray-300 hover:text-[#0ff] text-lg font-medium tracking-wide transition-all duration-300 hover:scale-105 px-6 md:px-0 py-2 md:py-0"
+                >
+                  {section}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </nav>
     </header>
