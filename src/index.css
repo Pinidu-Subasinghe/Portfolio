@@ -28,3 +28,17 @@ body {
 .animate-pulse-slow {
   animation: pulse-slow 2s infinite;
 }
+
+#typed-text {
+  /* ✅ Prevent iOS Safari “dust” shimmer */
+  will-change: transform;
+  transform: translateZ(0);
+  -webkit-font-smoothing: antialiased;
+  backface-visibility: hidden;
+
+  /* ✅ Use system-native emoji renderer */
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Color Emoji", sans-serif;
+
+  /* Optional – small motion smoothing */
+  display: inline-block;
+}

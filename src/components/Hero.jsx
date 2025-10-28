@@ -10,17 +10,19 @@ export default function Hero() {
   useEffect(() => {
     const options = {
       strings: [
-        "Hey, I'm Pinidu Pramudith 👋",
-        "Full-Stack Developer 💻",
-        "Creative Designer 🎨",
-        "Building Modern Web Experiences 🚀",
+        "Hey, I'm Pinidu Pramudith &#128075;", // 👋
+        "Frontend Developer &#128187;", // 💻
+        "UI/UX Enthusiast &#127912;", // 🎨
+        "MERN Stack Developer &#128640;", // 🚀
       ],
-      typeSpeed: 50,
-      backSpeed: 30,
+      typeSpeed: 45, // slightly slower = smoother iOS rendering
+      backSpeed: 25,
       backDelay: 2000,
       loop: true,
-      showCursor: false, // Disable blinking cursor
+      showCursor: false,
+      contentType: "html", // ✅ crucial for emoji correctness
     };
+
     const typed = new Typed("#typed-text", options);
     return () => typed.destroy();
   }, []);
@@ -56,8 +58,8 @@ export default function Hero() {
             <strong>Customs Inspector</strong> at{" "}
             <strong>Sri Lanka Customs</strong>. Passionate about{" "}
             <strong>frontend and full-stack (MERN) development</strong>, I enjoy
-            crafting responsive, user-focused web experiences using modern tools
-            like React.js, JavaScript, and Tailwind CSS.
+            crafting responsive, user-focused web experiences using modern
+            tools.
           </p>
 
           {/* Logos */}
