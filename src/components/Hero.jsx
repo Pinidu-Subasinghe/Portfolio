@@ -1,9 +1,10 @@
 import { useEffect } from "react";
-import { Download } from "lucide-react";
+import { Download, Eye } from "lucide-react";
 import Typed from "typed.js";
 import Me from "../assets/IMG_2184.jpg";
 import SLIITLogo from "../assets/sliit.png";
 import CustomsLogo from "../assets/slc.png";
+import ResumePDF from "../assets/Pinidu_Subasinghe_Frontend_Intern_Resume.pdf";
 
 export default function Hero() {
   useEffect(() => {
@@ -83,8 +84,17 @@ export default function Hero() {
               Explore My Work
             </a>
             <a
-              href="/path-to-resume.pdf"
-              download
+              href={ResumePDF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center px-6 py-3 rounded-lg border border-[#38bdf8] text-[#38bdf8] hover:bg-[#38bdf8] hover:text-black transition-all duration-300 neon-glow text-base font-medium"
+            >
+              <Eye className="mr-2" size={20} />
+              View Resume
+            </a>
+            <a
+              href={ResumePDF}
+              download="Pinidu_Subasinghe_Frontend_Intern_Resume.pdf"
               className="inline-flex items-center px-6 py-3 rounded-lg border border-[#38bdf8] text-[#38bdf8] hover:bg-[#38bdf8] hover:text-black transition-all duration-300 neon-glow text-base font-medium"
             >
               <Download className="mr-2" size={20} />

@@ -1,19 +1,59 @@
 import ProjectCard from "./ProjectCard";
-import { Monitor, Camera, User, Bus } from "lucide-react";
+import { Monitor, Camera, User, Bus, Calculator, Heart, Scissors } from "lucide-react";
 import SLIITLogo from "../assets/sliit.png";
 
 const projects = [
+  {
+    title: "Monaz Salon — Salon Reservation",
+    icon: <Scissors />,
+    description:
+      "Monaz Salon is a modern salon reservation web app built with the MERN stack. Features booking, JWT-based auth, and Bootstrap Icons for a polished UI.",
+    link: "https://github.com/Pinidu-Subasinghe/Monaz-Salon",
+    techStack: ["MongoDB", "Express.js", "React", "Node.js", "JWT", "Bootstrap"],
+  },
+  {
+    title: "Ask.ly - Q&A Platform",
+    icon: <Calculator />,
+    description:
+      "A modern Question & Answer web application where users can post questions, answer others, upvote/downvote, and manage their profiles — similar to Stack Overflow, but simpler, faster, and built with the MERN Stack.",
+    link: "https://github.com/Pinidu-Subasinghe/Q-A-Platform",
+    techStack: ["React", "MongoDB", "Express", "Node.js", "Tailwind CSS", "JWT"],
+  },
+  {
+    title: "OT Calculator",
+    icon: <Calculator />,
+    description:
+      "A modern Overtime Calculator web app built with HTML, CSS, and JavaScript. Features glassmorphism UI, a background video, and holiday-aware calculations for Sri Lanka (2025–2027).",
+    link: "https://github.com/Pinidu-Subasinghe/OT-Calculator",
+    techStack: ["HTML", "CSS", "JavaScript"],
+  },
   {
     title: "Portfolio",
     icon: <User />,
     description:
       "My personal portfolio showcasing my skills and projects. Built with React, Tailwind CSS, featuring a modern design and smooth animations.",
-    link: "https://github.com/pinidu2002/Portfolio",
+    link: "https://github.com/Pinidu-Subasinghe/Portfolio",
     techStack: [
       "React",
       "Tailwind CSS",
       "Lucide",
       "Motion",
+      "Vercel",
+    ],
+  },
+  {
+    title: "MindCare — Mental Health Care",
+    icon: <Heart />,
+    description:
+      "MindCare is a secure, user-friendly web application that connects patients and mental health professionals. Features mood tracking, journaling, real-time chat, and appointment scheduling with a focus on privacy and accessibility.",
+    link: "https://github.com/Pinidu-Subasinghe/Mind-Care",
+    techStack: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Node.js",
+      "Mongoose",
+      "MongoDB",
     ],
   },
   {
@@ -32,14 +72,14 @@ const projects = [
       "Postman",
     ],
 
-    link: "https://github.com/pinidu2002/Clothing_Store",
+    link: "https://github.com/Pinidu-Subasinghe/Clothing_Store",
   },
   {
     title: "SKW Photography",
     icon: <Camera />,
     description:
       "A complete IT solution built to streamline and modernize the operations of a photography studio. Developed using the MERN stack.",
-    link: "https://github.com/pinidu2002/SKW_Photograph",
+    link: "https://github.com/Pinidu-Subasinghe/SKW_Photograph",
     techStack: [
       "MongoDB",
       "Express",

@@ -1,3 +1,5 @@
+import JWTLogo from "../assets/jwt.svg";
+
 export default function ProjectCard({
   title,
   icon,
@@ -25,7 +27,15 @@ export default function ProjectCard({
       java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
       mongodb:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
-      jwt: "https://images.ctfassets.net/kbkgmx9upatd/6E4gdxqqmafg9Usjz9etTU/bc93ad8e3cea217c3de390239ff34c8c/jwt-hero.png",
+      jwt: JWTLogo,
+  mern: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      next: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/nextdotjs.svg",
+      nextjs: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/nextdotjs.svg",
+      mongoose: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/mongoose.svg",
+      vercel: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/vercel.svg",
+      socketio: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/socketdotio.svg",
+      clerk: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/clerk.svg",
+      nextauth: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/nextauthdotjs.svg",
       cloudinary:
         "https://cloudinary-res.cloudinary.com/image/upload/c_scale,fl_attachment,w_500/v1/logo/for_white_bg/cloudinary_icon_for_white_bg.png",
       vite: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg",
