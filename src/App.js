@@ -3,8 +3,9 @@ import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Skills from "./components/Skills"; // Add this line
+import Skills from "./components/Skills";
 import ScrollToTop from "./components/ScrollToTop";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
       </main>
       <Footer />
       <ScrollToTop />
+
+      {/* Add this line at the end of your app */}
+      <SpeedInsights />
     </div>
   );
 }
