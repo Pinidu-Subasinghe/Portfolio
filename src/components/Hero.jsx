@@ -50,10 +50,14 @@ export default function Hero() {
             </h2>
           </div>
           <p className="text-gray-300 max-w-md text-lg md:text-xl leading-relaxed -mt-4 sm:mt-0">
-            I am an Information Technology undergraduate at{" "}
-            <strong>SLIIT</strong> and work full-time as a Customs Inspector at{" "}
-            <strong>Sri Lanka Customs</strong>. I love technology, web
-            development, and building innovative digital experiences.
+            I’m a third-year{" "}
+            <strong>B.Sc. (Hons) Information Technology</strong> student at{" "}
+            <strong>SLIIT</strong> and currently work as a{" "}
+            <strong>Customs Inspector</strong> at{" "}
+            <strong>Sri Lanka Customs</strong>. Passionate about{" "}
+            <strong>frontend and full-stack (MERN) development</strong>, I enjoy
+            crafting responsive, user-focused web experiences using modern tools
+            like React.js, JavaScript, and Tailwind CSS.
           </p>
 
           {/* Logos */}

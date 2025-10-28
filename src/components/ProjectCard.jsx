@@ -28,14 +28,15 @@ export default function ProjectCard({
       mongodb:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
       jwt: JWTLogo,
-  mern: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      mern: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       next: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/nextdotjs.svg",
       nextjs: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/nextdotjs.svg",
       mongoose: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/mongoose.svg",
       vercel: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/vercel.svg",
       socketio: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/socketdotio.svg",
       clerk: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/clerk.svg",
-      nextauth: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/nextauthdotjs.svg",
+      nextauth:
+        "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/nextauthdotjs.svg",
       cloudinary:
         "https://cloudinary-res.cloudinary.com/image/upload/c_scale,fl_attachment,w_500/v1/logo/for_white_bg/cloudinary_icon_for_white_bg.png",
       vite: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg",
@@ -45,14 +46,15 @@ export default function ProjectCard({
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       express:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-      node: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      node:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
       tailwindcss:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1024px-Tailwind_CSS_Logo.svg.png?20230715030042",
       postman:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
       lucide: "https://lucide.dev/logo.svg",
-      motion: "https://github.com/user-attachments/assets/00d6d1c3-72c4-4c2f-a664-69da13182ffc"
-
+      motion:
+        "https://github.com/user-attachments/assets/00d6d1c3-72c4-4c2f-a664-69da13182ffc",
     };
 
     return (
@@ -62,45 +64,48 @@ export default function ProjectCard({
   };
 
   return (
-    <div className="bg-[#111827] p-6 rounded-2xl shadow-neon flex flex-col gap-4 text-white relative border border-transparent hover:border-cyan-400 transition-colors duration-300 h-full">
-      {/* Top Row: Icon + Title on Left, SLIIT Logo on Right */}
-      <div className="flex justify-between items-center">
+    <div className="bg-white/5 backdrop-blur-lg p-6 rounded-xl border border-white/10 hover:border-cyan-400 shadow-lg transition-all duration-300 flex flex-col justify-between h-full">
+      {/* Header: Icon + Title */}
+      <div className="flex justify-between items-center mb-3">
         <div className="flex items-center gap-3 text-cyan-400">
           <div className="text-2xl">{icon}</div>
           <h3 className="text-lg font-semibold text-white">{title}</h3>
         </div>
         {image && (
-          <div className="flex items-center">
-            <img
-              src={image}
-              alt="SLIIT Logo"
-              className="h-5 w-auto object-contain grayscale invert"
-            />
-          </div>
+          <img
+            src={image}
+            alt="Logo"
+            className="h-5 w-auto object-contain grayscale invert"
+          />
         )}
       </div>
 
-      <p className="text-sm text-gray-300 whitespace-pre-line">{description}</p>
+      {/* Description */}
+      <p className="text-sm text-gray-300 leading-relaxed mb-4">
+        {description}
+      </p>
 
-      <div className="flex flex-wrap gap-3 mt-4">
+      {/* Tech Stack */}
+      <div className="flex flex-wrap gap-3 mt-auto">
         {techStack.map((tech, i) => (
           <img
             key={i}
             src={getTechLogo(tech)}
             alt={tech}
             title={tech}
-            className="h-6 w-6 object-contain transition-all duration-300"
+            className="h-6 w-6 object-contain transition-transform duration-300 hover:scale-110"
             loading="lazy"
           />
         ))}
       </div>
 
+      {/* GitHub Link */}
       {link && (
         <a
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-auto text-cyan-300 hover:underline"
+          className="mt-4 text-cyan-300 text-sm hover:underline"
         >
           View on GitHub →
         </a>

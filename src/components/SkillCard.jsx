@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-// Removed framer-motion; using native CSS interactions
 
 const SkillCard = ({ name, percentage }) => {
   const progressRef = useRef(null);
@@ -11,12 +10,10 @@ const SkillCard = ({ name, percentage }) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target); // Animate only once
+          observer.unobserve(entry.target);
         }
       },
-      {
-        threshold: 0.3, // Trigger when 30% visible
-      }
+      { threshold: 0.3 }
     );
 
     if (cardRef.current) observer.observe(cardRef.current);
@@ -32,7 +29,7 @@ const SkillCard = ({ name, percentage }) => {
       const animation = progress.animate(
         [{ width: "0%" }, { width: `${percentage}%` }],
         {
-          duration: 2000,
+          duration: 1800,
           easing: "ease-in-out",
           fill: "forwards",
         }
@@ -41,30 +38,9 @@ const SkillCard = ({ name, percentage }) => {
     }
   }, [isVisible, percentage]);
 
-  const getGradientStyle = (name) => {
-    switch (name) {
-      case "HTML5":
-        return "bg-gradient-to-r from-orange-500 to-red-600";
-      case "CSS3":
-        return "bg-gradient-to-r from-blue-500 to-indigo-600";
-      case "JavaScript (ES6+)":
-        return "bg-gradient-to-r from-yellow-400 to-yellow-600";
-      case "React.js":
-        return "bg-gradient-to-r from-cyan-400 to-blue-600";
-      case "Node.js":
-        return "bg-gradient-to-r from-green-500 to-emerald-600";
-      case "Java":
-        return "bg-gradient-to-r from-[#1c1c1c] to-[#e76f00]";
-      case "MongoDB":
-        return "bg-gradient-to-r from-green-700 to-teal-600";
-      case "Kotlin":
-        return "bg-gradient-to-r from-purple-500 to-pink-600";
-      case "C++":
-        return "bg-gradient-to-r from-indigo-500 to-blue-700";
-      default:
-        return "bg-gradient-to-r from-gray-500 to-gray-700";
-    }
-  };
+  // ✨ Modern neon cyan gradient with realistic light reflection
+  const defaultBarColor =
+    "bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-500 shadow-[0_0_15px_#22d3ee80,0_0_35px_#22d3ee60,0_0_60px_#22d3ee40]";
 
   const getLogo = (name) => {
     const logos = {
@@ -78,6 +54,8 @@ const SkillCard = ({ name, percentage }) => {
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       "Node.js":
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      "Express.js":
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
       Java:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
       MongoDB:
@@ -103,25 +81,36 @@ const SkillCard = ({ name, percentage }) => {
   return (
     <div
       ref={cardRef}
-      className="bg-white/5 backdrop-blur-md p-6 rounded-xl shadow-md transition-colors duration-300 border border-white/10 hover:border-cyan-400 flex flex-col justify-between min-h-[180px] h-full"
+      className="bg-white/5 backdrop-blur-xl p-6 rounded-xl shadow-lg transition-all duration-300 border border-white/10 hover:border-cyan-400 flex flex-col justify-between h-full hover:shadow-[0_0_25px_#22d3ee40]"
     >
-      <div>
-        <div className="flex items-center mb-4">
+      {/* Header: logo + name + percentage (desktop only) */}
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center">
           {getLogo(name)}
-          <h3 className="text-xl font-bold ml-2 text-white">{name}</h3>
+          <h3 className="text-xl font-bold ml-2 text-white tracking-wide">
+            {name === "JavaScript (ES6+)" ? "JavaScript" : name}
+          </h3>
         </div>
-        <div className="w-full bg-white/10 rounded-full h-4 overflow-hidden">
-          <div
-            ref={progressRef}
-            className={`h-4 rounded-full ${getGradientStyle(name)}`}
-            style={{ width: "0%" }}
-          ></div>
-        </div>
+        <span className="hidden sm:block text-cyan-300 text-sm font-semibold drop-shadow-[0_0_4px_#22d3ee]">
+          {percentage}%
+        </span>
       </div>
 
-      <p className="text-center mt-4 text-sm font-medium text-gray-300">
-        {percentage}%
-      </p>
+      {/* Skill bar with glowing inner light */}
+      <div className="w-full bg-white/10 rounded-full h-4 overflow-hidden relative">
+        <div
+          ref={progressRef}
+          className={`h-4 rounded-full ${defaultBarColor} transition-all duration-500`}
+          style={{
+            width: "0%",
+            boxShadow:
+              "inset 0 0 5px #22d3ee80, 0 0 10px #22d3ee80, 0 0 25px #22d3ee60",
+          }}
+        ></div>
+
+        {/* Soft reflection overlay for realism */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent pointer-events-none"></div>
+      </div>
     </div>
   );
 };

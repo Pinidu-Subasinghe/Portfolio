@@ -3,15 +3,16 @@ import SkillCard from "./SkillCard";
 
 const Skills = () => {
   const skills = [
+    { name: "MongoDB", percentage: 80 },
+    { name: "Express.js", percentage: 70 },
+    { name: "React.js", percentage: 75 },
+    { name: "Node.js", percentage: 70 },
     { name: "HTML5", percentage: 85 },
     { name: "CSS3", percentage: 80 },
-    { name: "JavaScript (ES6+)", percentage: 75 },
-    { name: "React.js", percentage: 70 },
-    { name: "Node.js", percentage: 65 },
-    { name: "Java", percentage: 60 },
-    { name: "MongoDB", percentage: 80 },
+    { name: "JavaScript (ES6+)", percentage: 80 },
+    { name: "Java", percentage: 65 },
+    { name: "C++", percentage: 70 },
     { name: "Kotlin", percentage: 60 },
-    { name: "C++", percentage: 75 },
   ];
 
   return (
@@ -21,23 +22,29 @@ const Skills = () => {
           My Skills
         </h2>
 
-        {/* Mobile: horizontal scroll */}
+        {/* Mobile: horizontal carousel */}
         <div className="sm:hidden">
           <MobileCarousel
             items={skills}
             renderItem={(s, i) => (
-              <SkillCard key={i} name={s.name} percentage={s.percentage} />
+              <SkillCard
+                key={i}
+                name={s.name}
+                percentage={s.percentage}
+                showPercentage={false}
+              />
             )}
           />
         </div>
 
-        {/* Desktop / Tablet grid with equal height cards */}
-        <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+        {/* Desktop / Tablet grid */}
+        <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
             <SkillCard
               key={index}
               name={skill.name}
               percentage={skill.percentage}
+              showPercentage={false}
             />
           ))}
         </div>
