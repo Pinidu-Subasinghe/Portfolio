@@ -118,11 +118,12 @@ export default function Projects() {
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-[#38bdf8] drop-shadow-neon text-center">
           My Projects
         </h2>
-        {/* Mobile carousel: horizontal snap scrolling to reduce vertical length */}
+
+        {/* Mobile: vertical scroll stack with a max height so users can scroll down through cards */}
         <div className="sm:hidden">
-          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory py-2 px-2 -mx-2">
+          <div className="flex flex-col gap-6 max-h-[70vh] overflow-y-auto py-2 px-2 -mx-2">
             {projects.map((project, i) => (
-              <div key={i} className="snap-center flex-shrink-0 w-72">
+              <div key={i} className="w-full px-2 snap-start">
                 <ProjectCard {...project} />
               </div>
             ))}
@@ -137,5 +138,40 @@ export default function Projects() {
         </div>
       </div>
     </section>
+  );
+}
+
+function MobileCarousel({ items, renderItem }) {
+  const carouselRef = useRef(null);
+  const itemRefs = useRef([]);
+  const indexRef = useRef(0);
+
+  // ensure array slots
+  itemRefs.current = [];
+
+  useEffect(() => {
+    const len = items.length;
+    const carousel = carouselRef.current;
+    if (!carousel || len === 0) return;
+
+    const timer = setInterval(() => {
+      indexRef.current = (indexRef.current + 1) % len;
+      const el = itemRefs.current[indexRef.current];
+      if (el && el.scrollIntoView) {
+        el.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+      }
+    }, 1500);
+
+    return () => clearInterval(timer);
+  }, [items]);
+
+  return (
+    <div ref={carouselRef} className="flex gap-6 overflow-x-auto snap-x snap-mandatory py-2 px-2 -mx-2">
+      {items.map((it, idx) => (
+        <div key={idx} ref={(el) => (itemRefs.current[idx] = el)} className="snap-center flex-shrink-0 w-72">
+          {renderItem(it, idx)}
+        </div>
+      ))}
+    </div>
   );
 }
