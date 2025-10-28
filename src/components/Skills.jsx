@@ -18,7 +18,19 @@ const Skills = () => {
     <section id="skills" className="py-28 bg-[#0b0f1a] text-white">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-[#38bdf8] drop-shadow-neon text-center">My Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Mobile: horizontal carousel */}
+        <div className="sm:hidden">
+          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory py-2 px-2 -mx-2">
+            {skills.map((skill, index) => (
+              <div key={index} className="snap-center flex-shrink-0 w-64">
+                <SkillCard name={skill.name} percentage={skill.percentage} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop / Tablet grid */}
+        <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skills.map((skill, index) => (
             <SkillCard key={index} name={skill.name} percentage={skill.percentage} />
           ))}

@@ -118,7 +118,19 @@ export default function Projects() {
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-[#38bdf8] drop-shadow-neon text-center">
           My Projects
         </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Mobile carousel: horizontal snap scrolling to reduce vertical length */}
+        <div className="sm:hidden">
+          <div className="flex gap-6 overflow-x-auto snap-x snap-mandatory py-2 px-2 -mx-2">
+            {projects.map((project, i) => (
+              <div key={i} className="snap-center flex-shrink-0 w-72">
+                <ProjectCard {...project} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop / Tablet grid */}
+        <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, i) => (
             <ProjectCard key={i} {...project} />
           ))}

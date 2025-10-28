@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 const SkillCard = ({ name, percentage }) => {
   const progressRef = useRef(null);
@@ -101,8 +102,13 @@ const SkillCard = ({ name, percentage }) => {
   };
 
   return (
-    <div
+    <motion.div
       ref={cardRef}
+      initial={{ opacity: 0, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      whileHover={{ translateY: -6 }}
       className="bg-white/5 backdrop-blur-md p-6 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-white/10"
     >
       <div className="flex items-center mb-4">
@@ -119,7 +125,7 @@ const SkillCard = ({ name, percentage }) => {
       <p className="text-center mt-2 text-sm font-medium text-gray-300">
         {percentage}%
       </p>
-    </div>
+  </motion.div>
   );
 };
 
