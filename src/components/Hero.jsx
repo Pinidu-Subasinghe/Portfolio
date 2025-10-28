@@ -13,7 +13,7 @@ export default function Hero() {
         "Hey, I'm Pinidu Pramudith &#128075;", // 👋
         "Frontend Developer &#128187;", // 💻
         "UI/UX Enthusiast &#127912;", // 🎨
-        "MERN Stack Developer &#128640;", // 🚀
+        "Crafting Modern Web Experiences &#128640;", // 🚀
       ],
       typeSpeed: 45, // slightly slower = smoother iOS rendering
       backSpeed: 25,
