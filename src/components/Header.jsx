@@ -50,8 +50,9 @@ export default function Header() {
       {/* Navigation */}
       <nav
         className={`absolute md:static top-[70px] right-4 sm:right-8 w-[80%] sm:w-[60%] md:w-auto 
-          bg-[#0b0f1a]/95 backdrop-blur-lg border border-cyan-400/10 
-          md:bg-transparent md:border-none rounded-2xl md:rounded-none 
+          backdrop-blur-lg md:backdrop-blur-none 
+          md:bg-transparent md:border-none 
+          rounded-2xl md:rounded-none 
           overflow-hidden transform transition-all duration-500 ease-in-out 
           ${
             isOpen
@@ -59,7 +60,7 @@ export default function Header() {
               : "opacity-0 -translate-y-5 pointer-events-none md:pointer-events-auto md:opacity-100 md:translate-y-0"
           }`}
       >
-        <ul className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left md:space-x-10 py-6 md:py-0">
+        <ul className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left md:space-x-10 py-6 md:py-0 bg-transparent">
           {["Home", "Projects", "Skills", "Contact"].map((section, i) => {
             const targetId =
               section === "Home" ? "hero" : section.toLowerCase();
