@@ -8,7 +8,10 @@ import {
   Calculator,
   Heart,
   Scissors,
+  MessageSquareText,
+  BriefcaseBusiness,
 } from "lucide-react";
+
 import SLIITLogo from "../assets/sliit.png";
 
 const projects = [
@@ -29,7 +32,7 @@ const projects = [
   },
   {
     title: "Ask.ly - Q&A Platform",
-    icon: <Calculator />,
+    icon: <MessageSquareText />,
     description:
       "A modern Q&A web app where users can post questions, answer others, upvote/downvote, and manage profiles — built with the MERN Stack.",
     link: "https://github.com/Pinidu-Subasinghe/Q-A-Platform",
@@ -48,7 +51,7 @@ const projects = [
     description:
       "A modern Overtime Calculator web app with glassmorphism UI, a looping background video, and holiday-aware logic for Sri Lanka (2025–2027).",
     link: "https://github.com/Pinidu-Subasinghe/OT-Calculator",
-    techStack: ["HTML", "CSS", "JavaScript"],
+    techStack: ["HTML", "CSS", "JavaScript", "Vercel"],
   },
   {
     title: "Portfolio",
@@ -118,7 +121,7 @@ const projects = [
   },
   {
     title: "Recruitment Company System",
-    icon: <User />,
+    icon: <BriefcaseBusiness />,
     description:
       "A recruitment system enabling job seekers to apply and recruiters to manage listings — built using PHP and MySQL.",
     techStack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],

@@ -7,98 +7,83 @@ export default function Header() {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false); // Close menu on mobile after clicking a link
+      setIsOpen(false);
     }
   };
 
   return (
-    <header className="w-full bg-gradient-to-r from-[#0f172a] via-[#1e293b] to-[#0f172a] px-8 py-5 border-b border-[#1e293b] flex items-center justify-between fixed top-0 z-10 shadow-neon transition-all duration-300 hover:shadow-lg">
-      <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ff] to-[#38bdf8] text-2xl font-extrabold drop-shadow-neon animate-pulse-slow flex items-center">
-        <span className="flex items-center text-white">
-          <img
-            src="https://avatars.githubusercontent.com/u/9919?v=4"
-            alt="Profile"
-            className="w-6 h-6 rounded-full mr-2"
-          />
-          Pinidu Pramudith
-        </span>
+    <header className="fixed top-0 z-50 w-full bg-[#0b0f1a]/90 backdrop-blur-md border-b border-white/10 px-6 sm:px-10 py-5 flex items-center justify-between transition-all duration-300">
+      {/* Logo / Name */}
+      <h1 className="text-transparent bg-clip-text bg-gradient-to-r from-[#0ff] to-[#38bdf8] text-2xl font-extrabold tracking-wide flex items-center">
+        <img
+          src="https://avatars.githubusercontent.com/u/9919?v=4"
+          alt="Profile"
+          className="w-7 h-7 rounded-full mr-2 border border-cyan-400/40"
+        />
+        Pinidu Pramudith
       </h1>
-      <div className="md:hidden">
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="text-gray-300 hover:text-[#0ff] focus:outline-none"
-          aria-label="Toggle menu"
-        >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
-            />
-          </svg>
-        </button>
-      </div>
-      <nav
-        className={`${
-          isOpen ? "block" : "hidden"
-        } md:block md:flex md:space-x-6 absolute md:static top-16 right-4 bg-gray-900 md:bg-transparent p-4 md:p-0 rounded-lg md:rounded-none shadow-lg md:shadow-none`}
+
+      {/* Hamburger Button */}
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="md:hidden text-gray-300 hover:text-[#0ff] transition-transform duration-300 focus:outline-none"
+        aria-label="Toggle menu"
       >
-        <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 text-sm">
-          <li>
-            <a
-              href="#hero"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("hero");
+        <svg
+          className={`w-7 h-7 transform transition-all duration-500 ease-in-out ${
+            isOpen ? "rotate-180 text-[#0ff]" : ""
+          }`}
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+            d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
+          />
+        </svg>
+      </button>
+
+      {/* Navigation */}
+      <nav
+        className={`absolute md:static top-[70px] right-4 sm:right-8 w-[80%] sm:w-[60%] md:w-auto 
+          bg-[#0b0f1a]/95 backdrop-blur-lg border border-cyan-400/10 
+          md:bg-transparent md:border-none rounded-2xl md:rounded-none 
+          overflow-hidden transform transition-all duration-500 ease-in-out 
+          ${
+            isOpen
+              ? "opacity-100 translate-y-0 pointer-events-auto"
+              : "opacity-0 -translate-y-5 pointer-events-none md:pointer-events-auto md:opacity-100 md:translate-y-0"
+          }`}
+      >
+        <ul className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left md:space-x-10 py-6 md:py-0">
+          {["Home", "Projects", "Skills", "Contact"].map((section, i) => (
+            <li
+              key={section}
+              style={{
+                transitionDelay: `${i * 100}ms`,
               }}
-              className="text-gray-300 hover:text-[#0ff] transition-all duration-300 hover:scale-110 hover:drop-shadow-neon block md:inline-block"
+              className={`transform transition-all duration-500 ${
+                isOpen
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-[-10px] md:opacity-100 md:translate-y-0"
+              }`}
             >
-              Home
-            </a>
-          </li>
-          <li>
-            <a
-              href="#projects"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("projects");
-              }}
-              className="text-gray-300 hover:text-[#0ff] transition-all duration-300 hover:scale-110 hover:drop-shadow-neon block md:inline-block"
-            >
-              Projects
-            </a>
-          </li>
-          <li>
-            <a
-              href="#skills"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("skills");
-              }}
-              className="text-gray-300 hover:text-[#0ff] transition-all duration-300 hover:scale-110 hover:drop-shadow-neon block md:inline-block"
-            >
-              Skills
-            </a>
-          </li>
-          <li>
-            <a
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("contact");
-              }}
-              className="text-gray-300 hover:text-[#0ff] transition-all duration-300 hover:scale-110 hover:drop-shadow-neon block md:inline-block"
-            >
-              Contact
-            </a>
-          </li>
+              <a
+                href={`#${section.toLowerCase()}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(section.toLowerCase());
+                }}
+                className="block text-gray-300 hover:text-[#0ff] text-lg font-medium tracking-wide transition-all duration-300 hover:scale-105 px-6 md:px-0 py-2 md:py-0"
+              >
+                {section}
+              </a>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>

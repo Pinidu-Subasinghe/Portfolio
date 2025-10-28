@@ -13,7 +13,7 @@ const SkillCard = ({ name, percentage }) => {
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     if (cardRef.current) observer.observe(cardRef.current);
@@ -29,7 +29,7 @@ const SkillCard = ({ name, percentage }) => {
       const animation = progress.animate(
         [{ width: "0%" }, { width: `${percentage}%` }],
         {
-          duration: 1800,
+          duration: 1000,
           easing: "ease-in-out",
           fill: "forwards",
         }
@@ -46,8 +46,7 @@ const SkillCard = ({ name, percentage }) => {
     const logos = {
       HTML5:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-      CSS3:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+      CSS3: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
       "JavaScript (ES6+)":
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
       "React.js":
@@ -56,8 +55,7 @@ const SkillCard = ({ name, percentage }) => {
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
       "Express.js":
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-      Java:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+      Java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
       MongoDB:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
       Kotlin:
@@ -81,7 +79,7 @@ const SkillCard = ({ name, percentage }) => {
   return (
     <div
       ref={cardRef}
-      className="bg-white/5 backdrop-blur-xl p-6 rounded-xl shadow-lg transition-all duration-300 border border-white/10 hover:border-cyan-400 flex flex-col justify-between h-full hover:shadow-[0_0_25px_#22d3ee40]"
+      className="bg-white/5 p-6 rounded-xl backdrop-blur-md shadow-md transition-all duration-300 border border-white/10 hover:border-cyan-400 flex flex-col justify-between h-full hover:shadow-[0_0_25px_#22d3ee40]"
     >
       {/* Header: logo + name + percentage (desktop only) */}
       <div className="flex items-center justify-between mb-4">

@@ -64,7 +64,7 @@ export default function ProjectCard({
   };
 
   return (
-    <div className="bg-white/5 backdrop-blur-lg p-6 rounded-xl border border-white/10 hover:border-cyan-400 shadow-lg transition-all duration-300 flex flex-col justify-between h-full">
+    <div className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-cyan-400 backdrop-blur-md shadow-md transition-all duration-300 flex flex-col justify-between h-full">
       {/* Header: Icon + Title */}
       <div className="flex justify-between items-center mb-3">
         <div className="flex items-center gap-3 text-cyan-400">
