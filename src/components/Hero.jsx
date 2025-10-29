@@ -110,7 +110,7 @@ export default function Hero() {
         </div>
 
         {/* Right side - image */}
-        <div className="w-full lg:w-1/2 flex justify-center lg:justify-end pr-0 lg:pr-12 relative order-2 lg:order-2">
+        <div className="hidden sm:flex w-full lg:w-1/2 justify-center lg:justify-end pr-0 lg:pr-12 relative order-2 lg:order-2">
           {/* Glow effect */}
           <div className="absolute inset-0 bg-[#0ff] opacity-10 blur-3xl rounded-xl pointer-events-none"></div>
 
