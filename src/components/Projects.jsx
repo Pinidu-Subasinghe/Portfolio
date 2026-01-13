@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import {
+  TrendingUp,
   Monitor,
   Camera,
   User,
@@ -13,8 +14,26 @@ import {
 } from "lucide-react";
 
 import SLIITLogo from "../assets/sliit.png";
+import { link } from "framer-motion/client";
 
 const projects = [
+  {
+    title: "Lakneth Digital Solutions - Marketing Agency Website",
+    icon: <TrendingUp />,
+    description:
+      "🚀 A responsive agency website frontend built with React.js and styled with Tailwind CSS.",
+    link: "https://github.com/Pinidu-Subasinghe/Lakneth-Digital-Solutions",
+    techStack: [
+      "React",
+      "Lucide Icons",
+      "Tailwind CSS",
+      "JavaScript",
+      "JSON",
+      "Vercel",
+      "Whatsapp API",
+      "Facebook Graph API",
+    ],
+  },
   {
     title: "Monaz Salon — Salon Reservation",
     icon: <Scissors />,
@@ -59,7 +78,7 @@ const projects = [
     description:
       "My personal portfolio built with React and Tailwind CSS — features smooth animations and a clean, responsive design.",
     link: "https://github.com/Pinidu-Subasinghe/Portfolio",
-    techStack: ["React", "Tailwind CSS", "Lucide", "Motion", "Vercel"],
+    techStack: ["React", "Tailwind CSS", "lucideicons", "Motion", "Vercel"],
   },
   {
     title: "MindCare — Mental Health Care",
@@ -124,6 +143,7 @@ const projects = [
     icon: <BriefcaseBusiness />,
     description:
       "A recruitment system enabling job seekers to apply and recruiters to manage listings — built using PHP and MySQL.",
+    link: "https://github.com/Pinidu-Subasinghe/Recruitment-Company-System",
     techStack: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
     image: SLIITLogo,
   },

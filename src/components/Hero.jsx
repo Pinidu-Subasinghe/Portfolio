@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { Download, Eye } from "lucide-react";
 import Typed from "typed.js";
-import Me from "../assets/IMG_2184.jpg";
+import Me from "../assets/profile.png";
 import SLIITLogo from "../assets/sliit.png";
 import CustomsLogo from "../assets/slc.png";
-import ResumePDF from "../assets/Pinidu_Subasinghe_Frontend_Intern_Resume.pdf";
+import ResumePDF from "../assets/Pinidu Subasinghe Resume.pdf";
 
 export default function Hero() {
   useEffect(() => {
@@ -45,7 +45,7 @@ export default function Hero() {
           <div className="relative h-36 mb-2 sm:mb-4">
             {/* Fixed height container */}
             <h2
-              className="text-3xl md:text-5xl lg:text-6xl font-bold text-[#0ff] drop-shadow-neon leading-tight absolute inset-0 flex items-center justify-center lg:justify-start"
+              className="text-2xl md:text-5xl lg:text-6xl font-bold text-[#0ff] drop-shadow-neon leading-tight absolute inset-0 flex items-center justify-center lg:justify-start"
               style={{ minHeight: "4.5rem" }} // or set exact height you want
             >
               <span id="typed-text" className="inline-block"></span>

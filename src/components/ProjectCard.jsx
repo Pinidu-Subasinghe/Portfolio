@@ -27,34 +27,35 @@ export default function ProjectCard({
       java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
       mongodb:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+
       jwt: JWTLogo,
-      mern: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      next: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/nextdotjs.svg",
-      nextjs: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/nextdotjs.svg",
-      mongoose: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/mongoose.svg",
-      vercel: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/vercel.svg",
-      socketio: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/socketdotio.svg",
-      clerk: "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/clerk.svg",
-      nextauth:
-        "https://cdn.jsdelivr.net/npm/simple-icons@v10/icons/nextauthdotjs.svg",
-      cloudinary:
-        "https://cloudinary-res.cloudinary.com/image/upload/c_scale,fl_attachment,w_500/v1/logo/for_white_bg/cloudinary_icon_for_white_bg.png",
+
+      react:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+      node: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+      express:
+        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
       vite: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vite/vite-original.svg",
       bootstrap:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
-      react:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      express:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-      node:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-      tailwindcss:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1024px-Tailwind_CSS_Logo.svg.png?20230715030042",
       postman:
         "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
-      lucide: "https://lucide.dev/logo.svg",
-      motion:
-        "https://github.com/user-attachments/assets/00d6d1c3-72c4-4c2f-a664-69da13182ffc",
+
+      tailwindcss: "https://cdn.simpleicons.org/tailwindcss/38BDF8",
+      vercel: "https://cdn.simpleicons.org/vercel/FFFFFF",
+      motion: "https://github.com/user-attachments/assets/00d6d1c3-72c4-4c2f-a664-69da13182ffc",
+
+      // ✅ FIXED Lakneth icons (normalized keys)
+      lucideicons: "https://cdn.simpleicons.org/lucide/FFFFFF",
+      json: "https://icons.veryicon.com/png/o/business/vscode-program-item-icon/json-6.png",
+      whatsappapi: "https://cdn.simpleicons.org/whatsapp/25D366",
+      facebookgraphapi: "https://cdn.simpleicons.org/facebook/0866FF",
+
+      next: "https://cdn.simpleicons.org/nextdotjs/FFFFFF",
+      nextjs: "https://cdn.simpleicons.org/nextdotjs/FFFFFF",
+      mongoose: "https://cdn.simpleicons.org/mongoose/880000",
+      cloudinary:
+        "https://cloudinary-res.cloudinary.com/image/upload/c_scale,fl_attachment,w_500/v1/logo/for_white_bg/cloudinary_icon_for_white_bg.png",
     };
 
     return (
